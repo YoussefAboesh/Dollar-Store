@@ -1,13 +1,16 @@
 import java.util.Scanner;
 
 public class Clothes {
-    private String[] pants = { "blue jeans", "black jeans", "baggy", "shorts" };
-    private String[] tshirts = { "men's T-shirts", "woman's T-shirts", "pullovers", "oversize T-shirts" };
-    private String[] shoes = { "Nike shoes", "adidas shoes", "classic shoes", "woman's shoes" };
-    private String[] dresses = { "midi Dress", "A-line Dress", "mini Dress", "wrap Dress" };
-    private String[] suits = { "Two-Button-suit", "black suit", "Double-Breasted-suit", "Dinner suit" };
+    Scanner scanner = new Scanner(System.in);
 
-    private Cart cart;
+    public int entry;
+    public int entry2;
+    public int entry3;
+    public int entry4;
+    public int entry5;
+    public int entry6;
+    private Cart cart = new Cart();
+    public String selectedProduct;
 
     public Clothes() {
         this.cart = new Cart();
@@ -17,82 +20,185 @@ public class Clothes {
         return cart;
     }
 
-    private void displayCategorychose() {
-        System.out.println("Choose a category:\n1. Pants\n2. T-shirts\n3. Shoes\n4. Dresses\n5. Suits");
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 
-    private void displayCategory(String[] category) {
-        System.out.println("Choose a product:");
-        for (int i = 0; i < category.length; i++) {
-            System.out.println((i + 1) + ". " + category[i]);
+    public void Category() {
+        System.out.println("choose category: ");
+        System.out.println(" 1 pants ");
+        System.out.println(" 2 tshirts ");
+        System.out.println(" 3 shoes ");
+        System.out.println(" 4 dresses ");
+        System.out.println(" 5 suits ");
+        entry = scanner.nextInt();
+        Scanner ss = new Scanner(System.in);
+
+        switch (entry) {
+            case 1:
+                System.out.println("Choose from pants:");
+                System.out.println(" 1 blue jeans ");
+                System.out.println(" 2 black jeans ");
+                System.out.println(" 3 baggy ");
+                System.out.println(" 4 shorts");
+                entry2 = scanner.nextInt();
+                switch (entry2) {
+                    case 1:
+                        selectedProduct = "blue jeans";
+                        System.out.println("[ You Selected blue jeans ]");
+                        break;
+                    case 2:
+                        selectedProduct = "black jeans";
+                        System.out.println("[ You Selected black jeans ]");
+                        break;
+                    case 3:
+                        selectedProduct = "baggy";
+                        System.out.println("[ You Selected baggy ] ");
+                        break;
+                    case 4:
+                        selectedProduct = "shorts";
+                        System.out.println("[ You Selected shorts ] ");
+                        break;
+                    default:
+                        System.out.println("Invalid choice for pants");
+                        break;
+                }
+                break;
+
+            case 2:
+                System.out.println("Choose from tshirts:");
+                System.out.println(" 1 men's T-shirts ");
+                System.out.println(" 2 woman's T-shirts ");
+                System.out.println(" 3 pullovers ");
+                System.out.println(" 4 oversize T-shirts");
+                entry3 = scanner.nextInt();
+                switch (entry3) {
+                    case 1:
+                        selectedProduct = "men's T-shirts";
+                        System.out.println("[ You Selected men's T-shirts ]");
+                        break;
+                    case 2:
+                        selectedProduct = "woman's T-shirts";
+                        System.out.println("[ You Selected woman's T-shirts ]");
+                        break;
+                    case 3:
+                        selectedProduct = "pullovers";
+                        System.out.println("[ You Selected pullovers ] ");
+                        break;
+                    case 4:
+                        selectedProduct = "oversize T-shirts";
+                        System.out.println("[ You Selected oversize T-shirts ] ");
+                        break;
+                    default:
+                        System.out.println("Invalid choice for tshirts");
+                        break;
+                }
+                break;
+            case 3:
+                System.out.println("Choose from shoes:");
+                System.out.println(" 1 Nike shoes ");
+                System.out.println(" 2 adidas shoes ");
+                System.out.println(" 3 classic shoes ");
+                System.out.println(" 4 woman's shoes");
+                entry4 = scanner.nextInt();
+                switch (entry4) {
+                    case 1:
+                        selectedProduct = "Nike shoes";
+                        System.out.println("[ You Selected Nike shoes ]");
+                        break;
+                    case 2:
+                        selectedProduct = "adidas shoes";
+                        System.out.println("[ You Selected adidas shoes ]");
+                        break;
+                    case 3:
+                        selectedProduct = "classic shoes";
+                        System.out.println("[ You Selected classic shoes ] ");
+                        break;
+                    case 4:
+                        selectedProduct = "woman's shoes";
+                        System.out.println("[ You Selected woman's shoes ] ");
+                        break;
+                    default:
+                        System.out.println("Invalid choice for shoes");
+                        break;
+                }
+                break;
+            case 4:
+                System.out.println("Choose from dresses:");
+                System.out.println(" 1 midi Dress ");
+                System.out.println(" 2 A-line Dress ");
+                System.out.println(" 3 mini Dress ");
+                System.out.println(" 4 shorts");
+                entry5 = scanner.nextInt();
+                switch (entry5) {
+                    case 1:
+                        selectedProduct = "midi Dress";
+                        System.out.println("[ You Selected midi Dress ]");
+                        break;
+                    case 2:
+                        selectedProduct = "A-line Dress";
+                        System.out.println("[ You Selected A-line Dress ]");
+                        break;
+                    case 3:
+                        selectedProduct = "mini Dress";
+                        System.out.println("[ You Selected mini Dress ] ");
+                        break;
+                    case 4:
+                        selectedProduct = "wrap Dress";
+                        System.out.println("[ You Selected wrap Dress ] ");
+                        break;
+                    default:
+                        System.out.println("Invalid choice for dresses");
+                        break;
+                }
+                break;
+            case 5:
+                System.out.println("Choose from suits:");
+                System.out.println(" 1 Two-Button-suit ");
+                System.out.println(" 2 black suit ");
+                System.out.println(" 3 Double-Breasted-suit ");
+                System.out.println(" 4 Dinner suit");
+                entry6 = scanner.nextInt();
+                switch (entry6) {
+                    case 1:
+                        selectedProduct = "Two-Button-suit";
+                        System.out.println("[ You Selected Two-Button-suit ]");
+                        break;
+                    case 2:
+                        selectedProduct = "black suit";
+                        System.out.println("[ You Selected black suit ]");
+                        break;
+                    case 3:
+                        selectedProduct = "Double-Breasted-suit";
+                        System.out.println("[ You Selected Double-Breasted-suit ] ");
+                        break;
+                    case 4:
+                        selectedProduct = "Dinner suit";
+                        System.out.println("[ You Selected Dinner suit ] ");
+                        break;
+                    default:
+                        System.out.println("Invalid choice for suits");
+                        break;
+                }
+                break;
+            default:
+                System.out.println("Invalid category choice");
+                break;
+
         }
-    }
-
-    private void chooseProduct(String[] category) {
-        Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
-
-        if (choice > category.length || choice <= 0) {
-            System.out.println("Product is not available!");
-            sc.close();
-            return;
-        }
-
-        System.out.println("You chose: " + "(" + category[choice - 1] + ")");
         System.out.println("1. Add to cart\n2. Remove from cart");
-        int cartChoice = sc.nextInt();
-
+        int cartChoice = ss.nextInt();
         switch (cartChoice) {
             case 1:
-                cart.addToCart(category[choice - 1]);
+                cart.addToCart(selectedProduct);
                 break;
             case 2:
-                cart.removeFromCart(category[choice - 1]);
+                cart.removeFromCart(selectedProduct);
                 break;
             default:
                 System.out.println("Invalid choice!");
                 break;
         }
-
-        sc.close();
+        ss.close();
     }
-
-    public void selectCategory() {
-        displayCategorychose();
-        Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
-
-        switch (choice) {
-            case 1:
-                displayCategory(pants);
-                chooseProduct(pants);
-                break;
-
-            case 2:
-                displayCategory(tshirts);
-                chooseProduct(tshirts);
-                break;
-
-            case 3:
-                displayCategory(shoes);
-                chooseProduct(shoes);
-                break;
-
-            case 4:
-                displayCategory(dresses);
-                chooseProduct(dresses);
-                break;
-
-            case 5:
-                displayCategory(suits);
-                chooseProduct(suits);
-                break;
-
-            default:
-                System.out.println("Invalid choice!");
-                break;
-        }
-        sc.close();
-    }
-
 }
