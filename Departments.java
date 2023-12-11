@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Departments {
-    protected String prname;
-    protected double prprice;
+    protected String productName;
+    protected double productPrice;
     protected int id;
     private Clothes clothes;
     private Electronics electronics;
@@ -17,8 +17,8 @@ public class Departments {
     }
 
     public Departments(String a, double b) {
-        this.prname = a;
-        this.prprice = b;
+        this.productName = a;
+        this.productPrice = b;
     }
 
     public Foods getFoods() {
@@ -42,7 +42,7 @@ public class Departments {
         System.out.println("1- Food.\n");
         System.out.println("2- Electronics.\n");
         System.out.println("3- Clothes.\n");
-        System.out.println("4- Makeup and accessories.\n");
+        System.out.println("4- AccessoriesAndMakeup.\n");
 
         Scanner input = new Scanner(System.in);
 
@@ -55,16 +55,16 @@ public class Departments {
 
         switch (id) {
             case 1:
-                foodarges();
+                foodCat();
                 break;
             case 2:
-                Electarges();
+                electronicsCat();
                 break;
             case 3:
-                Clotharges();
+                clothesCat();
                 break;
             case 4:
-                Beautyarges();
+                AccessoriesAndMakeupCat();
                 break;
             default:
                 System.out.println("Error!\n" + "Please Enter The Number Of Department you want");
@@ -74,19 +74,19 @@ public class Departments {
         input.close();
     }
 
-    public void foodarges() {
+    public void foodCat() {
         foods.displayProdByCategory();
     }
 
-    public void Electarges() {
+    public void electronicsCat() {
         electronics.displayProdByCategory();
     }
 
-    public void Clotharges() {
-        clothes.selectCategory();
+    public void clothesCat() {
+        clothes.Category();
     }
 
-    public void Beautyarges() {
+    public void AccessoriesAndMakeupCat() {
         accessoriesAndMakeup.Category();
     }
 
