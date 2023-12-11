@@ -16,20 +16,21 @@ public class Electronics {
     }
 
     private void initializeProd() {
-        ProdByCategory = new String[][]{
-                {"Phones and Tablets", "iPhone 14", "Samsung Galaxy Tab", "Redmi Note 9 Pro Max"},
-                {"TVs and Audio Devices", "Sony 4K Smart TV", "LG OLED55CXPUA", "Samsung Neo QLED 8K"},
-                {"Computers and Laptops", "Dell G15", "MacBook M1", "HP Spectre x360"},
-                {"Home Appliances", "Microwave", "Toaster", "Coffee maker"},
-                {"Gaming and Toys", "PlayStation 5", "Xbox Series X", "PlayStation VR"}
+        ProdByCategory = new String[][] {
+                { "Phones and Tablets", "iPhone 14", "Samsung Galaxy Tab", "Redmi Note 9 Pro Max" },
+                { "TVs and Audio Devices", "Sony 4K Smart TV", "LG OLED55CXPUA", "Samsung Neo QLED 8K" },
+                { "Computers and Laptops", "Dell G15", "MacBook M1", "HP Spectre x360" },
+                { "Home Appliances", "Microwave", "Toaster", "Coffee maker" },
+                { "Gaming and Toys", "PlayStation 5", "Xbox Series X", "PlayStation VR" }
         };
     }
 
     public void displayProdByCategory() {
         String category = "";
-        Scanner input = new Scanner(System.in);  
+        Scanner input = new Scanner(System.in);
 
-        System.out.print("Categories in DepElectronics:\n1. Phones and Tablets\n2. TVs and Audio Devices\n3. Computers and Laptops\n4. Home Appliances\n5. Gaming and Toys\nSelect a category:");
+        System.out.print(
+                "Categories in DepElectronics:\n1. Phones and Tablets\n2. TVs and Audio Devices\n3. Computers and Laptops\n4. Home Appliances\n5. Gaming and Toys\nSelect a category:");
 
         while (true) {
             try {
@@ -37,7 +38,7 @@ public class Electronics {
                 break;
             } catch (Exception e) {
                 System.out.println("Error! Please enter a valid number.");
-                input.nextLine(); 
+                input.nextLine();
             }
         }
 
@@ -81,7 +82,7 @@ public class Electronics {
                 break;
             } catch (Exception e) {
                 System.out.println("Error! Please enter a valid number.");
-                input.nextLine(); 
+                input.nextLine();
             }
         }
 
@@ -90,8 +91,8 @@ public class Electronics {
             System.out.println("\nYou selected: " + selectedProduct);
         } else {
             System.out.println("\nInvalid product choice.");
-        }  
-     System.out.println("1. Add to cart\n2. Remove from cart");
+        }
+        System.out.println("1. Add to cart\n2. Remove from cart");
         int cartChoice = input.nextInt();
         switch (cartChoice) {
             case 1:
