@@ -6,7 +6,6 @@ public class Foods {
     private int choice;
     private Cart cart = new Cart();
 
-    // Default constructor
     public Foods() {
         initializeProd();
     }
@@ -30,7 +29,6 @@ public class Foods {
         String category = "";
         Scanner input = new Scanner(System.in);
 
-        // Ask the user which section they want to see their products
         System.out.print(
                 "Categories in DepFoods:\n1. canned food\n2. Freezers\n3. vegetables and fruits\n4. Drinks\n5. Chocolates\nSelect a category:");
 
@@ -44,7 +42,6 @@ public class Foods {
             }
         }
 
-        // Use switch to select the selected partition
         switch (choice) {
             case 1:
                 category = "canned food";
@@ -66,7 +63,6 @@ public class Foods {
                 displayProdByCategory();
         }
 
-        // Search for the section and display the products if found
         for (String[] prodCategory : ProdByCategory) {
             if (prodCategory[0].equals(category)) {
                 System.out.println("\nProducts in " + category + ":");
@@ -77,7 +73,6 @@ public class Foods {
             }
         }
 
-        // Ask the user to choose a product
         System.out.print("Choose a product:");
 
         while (true) {
@@ -90,7 +85,6 @@ public class Foods {
             }
         }
 
-        // Check if the product choice is valid
         if (productChoice > 0 && productChoice <= ProdByCategory[choice - 1].length - 1) {
             String selectedProduct = ProdByCategory[choice - 1][productChoice];
             System.out.println("\nYou selected: " + selectedProduct);
