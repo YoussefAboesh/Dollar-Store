@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 interface IUser {
     String getUsername();
+
     String getPass();
+
     String getEmail();
 }
 
@@ -11,7 +13,6 @@ public class User implements IUser {
     protected String pass;
     protected String email;
     protected Check check;
-    protected Departments department = new Departments();
 
     public User() {
     }
