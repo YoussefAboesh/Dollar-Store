@@ -7,9 +7,9 @@ public class AccessoriesAndMakeup {
     public int entry2;
     public int entry3;
     private Cart cart = new Cart();
-    public String selectedProduct; 
+    public String selectedProduct;
 
-    public AccessoriesAndMakeup(){
+    public AccessoriesAndMakeup() {
         this.cart = new Cart();
     }
 
@@ -39,7 +39,7 @@ public class AccessoriesAndMakeup {
                 entry2 = scanner.nextInt();
                 switch (entry2) {
                     case 1:
-                        selectedProduct = "Ring"; 
+                        selectedProduct = "Ring";
                         System.out.println("[ You Selected Ring ]");
                         break;
                     case 2:
@@ -104,15 +104,15 @@ public class AccessoriesAndMakeup {
                 System.out.println("Invalid category choice");
                 break;
 
-        }     
+        }
         System.out.println("1. Add to cart\n2. Remove from cart");
         int cartChoice = ss.nextInt();
         switch (cartChoice) {
             case 1:
-                cart.addToCart(selectedProduct); 
+                cart.addToCart(selectedProduct);
                 break;
             case 2:
-                cart.removeFromCart(selectedProduct); 
+                cart.removeFromCart(selectedProduct);
                 break;
             default:
                 System.out.println("Invalid choice!");
