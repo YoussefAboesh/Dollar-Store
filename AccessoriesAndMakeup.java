@@ -25,9 +25,17 @@ public class AccessoriesAndMakeup {
         System.out.println("choose category: ");
         System.out.println(" 1 Accessories ");
         System.out.println(" 2 Makeup ");
-        entry = scanner.nextInt();
-        Scanner ss = new Scanner(System.in);
 
+        Scanner ss = new Scanner(System.in);
+        while (true) {
+            try {
+                entry = scanner.nextInt();
+                break;
+            } catch (Exception e) {
+                System.out.println("Error! Please enter a valid number of categories.");
+                scanner.nextLine();
+            }
+        }
         switch (entry) {
             case 1:
                 System.out.println("Choose from Accessories:");
@@ -36,7 +44,15 @@ public class AccessoriesAndMakeup {
                 System.out.println(" 3 Belt ");
                 System.out.println(" 4 Scarf");
                 System.out.println(" 5 Glasses");
-                entry2 = scanner.nextInt();
+                while (true) {
+                    try {
+                        entry2 = scanner.nextInt();
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("Error! Please enter a valid number of products.");
+                        scanner.nextLine();
+                    }
+                }
                 switch (entry2) {
                     case 1:
                         selectedProduct = "Ring";
@@ -60,6 +76,7 @@ public class AccessoriesAndMakeup {
                         break;
                     default:
                         System.out.println("Invalid choice for Accessories");
+                        Category();
                         break;
                 }
                 break;
@@ -72,7 +89,15 @@ public class AccessoriesAndMakeup {
                 System.out.println(" 4 Foundation ");
                 System.out.println(" 5 Eyeliner");
 
-                entry3 = scanner.nextInt();
+                while (true) {
+                    try {
+                        entry3 = scanner.nextInt();
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("Error! Please enter a valid number of products.");
+                        scanner.nextLine();
+                    }
+                }
                 switch (entry3) {
                     case 1:
                         selectedProduct = "Lipstick";
@@ -96,17 +121,28 @@ public class AccessoriesAndMakeup {
                         break;
                     default:
                         System.out.println("Invalid choice for Makeup");
+                        Category();
                         break;
                 }
                 break;
 
             default:
                 System.out.println("Invalid category choice");
+                Category();
                 break;
 
         }
         System.out.println("1. Add to cart\n2. Remove from cart");
-        int cartChoice = ss.nextInt();
+        int cartChoice;
+        while (true) {
+            try {
+                cartChoice = ss.nextInt();
+                break;
+            } catch (Exception e) {
+                System.out.println("Error! Please Enter a Number from these options only in front of you");
+                ss.nextLine();
+            }
+        }
         switch (cartChoice) {
             case 1:
                 cart.addToCart(selectedProduct);
@@ -116,6 +152,7 @@ public class AccessoriesAndMakeup {
                 break;
             default:
                 System.out.println("Invalid choice!");
+                Category();
                 break;
         }
         ss.close();
