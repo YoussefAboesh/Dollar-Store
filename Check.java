@@ -122,5 +122,6 @@ public class Check {
 
         scanner.close();
         printReceipt();
+        System.exit(0);
     }
 }
