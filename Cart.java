@@ -42,7 +42,7 @@ public class Cart {
         System.out.println("1. Confirm Purchase");
         System.out.println("2. change product");
 
-        int choice = scanner.nextInt();
+        int choice =scanner.nextInt();
         scanner.nextLine();
 
         switch (choice) {
