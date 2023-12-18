@@ -37,7 +37,7 @@ public class Electronics {
                 choice = input.nextInt();
                 break;
             } catch (Exception e) {
-                System.out.println("Error! Please enter a valid number.");
+                System.out.println("Error! Please enter a valid number of categories.");
                 input.nextLine();
             }
         }
@@ -81,7 +81,7 @@ public class Electronics {
                 productChoice = input.nextInt();
                 break;
             } catch (Exception e) {
-                System.out.println("Error! Please enter a valid number.");
+                System.out.println("Error! Please enter a valid number of pruducts.");
                 input.nextLine();
             }
         }
@@ -91,9 +91,19 @@ public class Electronics {
             System.out.println("\nYou selected: " + selectedProduct);
         } else {
             System.out.println("\nInvalid product choice.");
+            displayProdByCategory();
         }
         System.out.println("1. Add to cart\n2. Remove from cart");
-        int cartChoice = input.nextInt();
+        int cartChoice;
+        while (true) {
+            try {
+                cartChoice = input.nextInt();
+                break;
+            } catch (Exception e) {
+                System.out.println("Error! Please Enter a Number from these options only in front of you");
+                input.nextLine();
+            }
+        }
         switch (cartChoice) {
             case 1:
                 cart.addToCart(ProdByCategory[choice - 1][productChoice]);
