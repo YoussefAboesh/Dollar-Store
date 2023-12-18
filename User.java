@@ -76,7 +76,17 @@ public class User implements IUser {
 
     public void chooseOne(Scanner s, Departments dept) {
         displayWelcome();
-        int choice = s.nextInt();
+        int choice;
+        while (true) {
+            try {
+                choice = s.nextInt();
+                break;
+            } catch (Exception e) {
+                System.out.println("Error! Please Enter a Number from these options only in front of you");
+                s.nextLine();
+            }
+        }
+
         switch (choice) {
             case 0:
                 System.out.println("Thanks for visiting our store.");
