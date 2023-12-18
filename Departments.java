@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
 public class Departments {
-    protected String productName;
-    protected double productPrice;
-    protected int id;
+    
+    private int id;
     private Clothes clothes;
     private Electronics electronics;
     private AccessoriesAndMakeup accessoriesAndMakeup;
@@ -14,11 +13,6 @@ public class Departments {
         this.electronics = new Electronics();
         this.accessoriesAndMakeup = new AccessoriesAndMakeup();
         this.foods = new Foods();
-    }
-
-    public Departments(String a, double b) {
-        this.productName = a;
-        this.productPrice = b;
     }
 
     public Foods getFoods() {
@@ -43,15 +37,17 @@ public class Departments {
         System.out.println("2- Electronics.\n");
         System.out.println("3- Clothes.\n");
         System.out.println("4- AccessoriesAndMakeup.\n");
-
         Scanner input = new Scanner(System.in);
 
-        try {
-        } catch (Exception e) {
-            System.out.println("Error! Please Enter The Number Of Department you want");
+        while (true) {
+            try {
+                id = input.nextInt();
+                break;
+            } catch (Exception e) {
+                System.out.println("Error! Please Enter The Number Of Department you want");
+                input.nextLine();
+            }
         }
-
-        id = input.nextInt();
 
         switch (id) {
             case 1:
